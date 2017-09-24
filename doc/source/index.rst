@@ -5,7 +5,7 @@
 openradar-cookbooks: Collection of Notebooks on Weather Radar Processing
 ========================================================================
 
-:Release: |release|
+:Commit: :commit:`\ `
 :Date: |today|
 
 This collection of jupyter notebooks serves as a entry point to weather radar data processing using open source software projects.

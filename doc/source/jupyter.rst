@@ -51,7 +51,7 @@ After this procedure, the example notebooks will automagically pull the required
 How to install jupyter?
 -----------------------
 
-As already pointed out above, you can just look at the rendered notebooks :doc:`online docs <notebooks>`. In order to use them interactively, you need to install ``jupyter``. ``jupyter`` is shipped with `Anaconda's <https://www.continuum.io/downloads>`_ distribution by default. If you installed wradlib into Anaconda's *default (root) environment*, you are already done. If you installed openradar-cookbooks in a separate *virtual environment* (as recommended :doc:`here <gettingstarted>`), you need to install ``jupyter`` in that virtual environment, too::
+As already pointed out above, you can just look at the rendered notebooks :doc:`online docs <notebooks>`. In order to use them interactively, you need to install ``jupyter``. ``jupyter`` is shipped with `Anaconda's <https://www.continuum.io/downloads>`_ distribution by default. If you installed wradlib into Anaconda's *default (root) environment*, you are already done. If you installed openradar-cookbooks in a separate *virtual environment*, you need to install ``jupyter`` in that virtual environment, too::
 
 	Under Windows:
 	> activate openradar
