@@ -29,7 +29,7 @@ conda config --add channels conda-forge
 conda install --yes gdal numpy scipy matplotlib netcdf4 h5py xmltodict
 
 # Install openradar-data
-git clone https://github.com/openradar/openradar-data.git $HOME/openradar-data
+git clone https://github.com/openradar/openradar-cookbooks-data.git $HOME/openradar-data
 echo $PWD
 ls -lart $HOME
 ls -lart $HOME/openradar-data
