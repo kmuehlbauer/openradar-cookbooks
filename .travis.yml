@@ -11,6 +11,8 @@ addons:
 env:
   global:
     - OPENRADAR_BUILD_DIR=$TRAVIS_BUILD_DIR
+    - OPENRADAR_DATA=$HOME/openradar-data
+    - OPENRADAR_NOTEBOOKS=$OPENRADAR_BUILD_DIR/notebooks-render
     # openradar-bot
     # todo: add secure env var
     # - secure:
@@ -34,10 +36,8 @@ install:
     - ci-scripts/install_wradlib.sh
 
 before_script:
-    - export OPENRADAR_DATA=$HOME/openradar-data
-    # duplicate notebooks folder
-    - export OPENRADAR_NOTEBOOKS=$OPENRADAR_BUILD_DIR/notebooks-render
-    - mkdir $OPENRADAR_NOTEBOOKS && cp -R notebooks $OPENRADAR_NOTEBOOKS/
+    # duplicate notebooks
+    - ci-scripts/copy_notebooks_to_render.sh
     # enter headless mode
     - export DISPLAY=:99
     - sh -e /etc/init.d/xvfb start
@@ -47,5 +47,5 @@ script:
     - ci-scripts/execute_notebooks.sh
 
 after_success:
-    - if [[ "$DOC_BUILD" == "true" ]]; then ci-scripts/copy_notebooks.sh; fi
+    - if [[ "$DOC_BUILD" == "true" ]]; then ci-scripts/copy_notebooks_to_docs.sh; fi
     - if [[ "$DOC_BUILD" == "true" ]]; then cd $OPENRADAR_BUILD_DIR; ci-scripts/build_docs.sh; fi
