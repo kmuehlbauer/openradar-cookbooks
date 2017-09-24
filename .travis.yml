@@ -44,7 +44,7 @@ before_script:
     - sleep 3
 
 script:
-    - scripts/execute_notebooks.sh
+    - ci-scripts/execute_notebooks.sh
 
 after_success:
     - if [[ "$DOC_BUILD" == "true" ]]; then ci-scripts/copy_notebooks.sh; fi
