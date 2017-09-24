@@ -30,8 +30,8 @@ matrix:
 
 install:
     - deactivate
-    - source scripts/install.sh
-    - scripts/install_wradlib.sh
+    - source ci-scripts/install.sh
+    - ci-scripts/install_wradlib.sh
 
 before_script:
     - export OPENRADAR_DATA=$HOME/openradar-data
@@ -47,5 +47,5 @@ script:
     - scripts/execute_notebooks.sh
 
 after_success:
-    - if [[ "$DOC_BUILD" == "true" ]]; then scripts/copy_notebooks.sh; fi
-    - if [[ "$DOC_BUILD" == "true" ]]; then cd $OPENRADAR_BUILD_DIR; scripts/build_docs.sh; fi
+    - if [[ "$DOC_BUILD" == "true" ]]; then ci-scripts/copy_notebooks.sh; fi
+    - if [[ "$DOC_BUILD" == "true" ]]; then cd $OPENRADAR_BUILD_DIR; ci-scripts/build_docs.sh; fi
