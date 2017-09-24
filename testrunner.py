@@ -232,10 +232,8 @@ def main(args):
             if arg:
                 test = keep_tests(test, arg[0])
             queue = Queue()
-            keywords = {'notebooks': test_notebooks}
             proc = Process(target=single_suite_process,
-                           args=(queue, test, verbosity),
-                           kwargs=keywords)
+                           args=(queue, test, verbosity))
             proc.start()
             result = queue.get()
             proc.join()
